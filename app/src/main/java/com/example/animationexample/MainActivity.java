@@ -13,7 +13,7 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
    Button rotateButton;
 
-    Button nextAnimationButton;
+    Button nextAnimationButton,canvasButton;
     Animation rotateAnimation;
     Animation animationObject;
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
             ImageView img=findViewById(R.id.simpleImageView);
             nextAnimationButton=findViewById(R.id.nextAnimation);
-
+            canvasButton=findViewById(R.id.canvasId);
             rotateButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -47,8 +47,16 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+            canvasButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent canvasIntent=new Intent(getApplicationContext(),canvasExample.class);
+                    startActivity(canvasIntent);
+                }
+            });
 
         }
+
 }
 
 
